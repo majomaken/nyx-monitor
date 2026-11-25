@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    435,
+    440
+   ],
+   "body": "scarlet-goddeath-hips.png",
+   "head": [
+    0.334,
+    0.04,
+    0.669,
+    0.422
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    384,
+    560
+   ],
+   "body": "scarlet-goddeath-full.png",
+   "head": [
+    0.24,
+    0.02,
+    0.48,
+    0.21
+   ]
+  }
+ },
+ "poses": {}
+}

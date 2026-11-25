@@ -1,0 +1,71 @@
+{
+    "nyx": {
+        "name": "Nyx",
+        "category": "nyx",
+        "away": "NYX · VUELVO YA",
+        "dir": "assets",
+        "manifest": "variants.json",
+        "portrait": "nyx-portrait.png"
+    },
+    "okane": {
+        "name": "Okane",
+        "category": "nyx",
+        "away": "OKANE · YA VUELVO",
+        "dir": "characters/okane",
+        "manifest": "variants.json",
+        "phrases": "phrases.json",
+        "portrait": "okane-portrait.png"
+    },
+    "rapi-red-hood": {
+        "name": "Rapi: Red Hood",
+        "short": "Rapi",
+        "category": "nikke",
+        "away": "RAPI · YA VUELVO",
+        "dir": "characters/rapi-red-hood",
+        "manifest": "variants.json",
+        "portrait": "rapi-red-hood-portrait.png"
+    },
+    "crown": {
+        "name": "Crown",
+        "category": "nikke",
+        "away": "CROWN · YA VUELVO",
+        "dir": "characters/crown",
+        "manifest": "variants.json",
+        "portrait": "crown-portrait.png"
+    },
+    "anis-star": {
+        "name": "Anis: Star",
+        "short": "Anis",
+        "category": "nikke",
+        "away": "ANIS · YA VUELVO",
+        "dir": "characters/anis-star",
+        "manifest": "variants.json",
+        "portrait": "anis-star-portrait.png"
+    },
+    "marian-queen": {
+        "name": "Marian: Queen",
+        "short": "Marian",
+        "category": "nikke",
+        "away": "MARIAN · YA VUELVO",
+        "dir": "characters/marian-queen",
+        "manifest": "variants.json",
+        "portrait": "marian-queen-portrait.png"
+    },
+    "scarlet-goddeath": {
+        "name": "Scarlet: Goddeath",
+        "short": "Scarlet",
+        "category": "nikke",
+        "away": "SCARLET · YA VUELVO",
+        "dir": "characters/scarlet-goddeath",
+        "manifest": "variants.json",
+        "portrait": "scarlet-goddeath-portrait.png"
+    },
+    "flora": {
+        "name": "Flora",
+        "category": "nikke",
+        "away": "FLORA · YA VUELVO",
+        "dir": "characters/flora",
+        "manifest": "variants.json",
+        "portrait": "flora-portrait.png"
+    }
+}

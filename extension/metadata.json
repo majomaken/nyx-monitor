@@ -1,0 +1,8 @@
+{
+  "uuid": "nyx-monitor@majomaken",
+  "name": "Nyx Monitor",
+  "description": "Nyx, the spirit of the Super PC, beside a glass card with CPU, RAM and GPU. Always on top, click-through; Super+Alt+N or the pin shows it in full colour.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.nyx-monitor",
+  "version-name": "1.2"
+}

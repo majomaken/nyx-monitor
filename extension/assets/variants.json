@@ -1,0 +1,1722 @@
+{
+  "variants": {
+    "hips": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "body": "nyx-hips.png",
+      "blink": "nyx-hips-blink.png",
+      "hand": "nyx-hips-hand.png",
+      "hand_pivot": [
+        0.1316,
+        0.5121
+      ],
+      "faces": {
+        "stars": "nyx-hips-face-stars.png",
+        "determined": "nyx-hips-face-determined.png",
+        "dizzy": "nyx-hips-face-dizzy.png",
+        "pout": "nyx-hips-face-pout.png"
+      },
+      "poses": {
+        "peek": "peek",
+        "sleep": "sleep",
+        "duck": "duck",
+        "worry": "worry",
+        "cheer": "cheer",
+        "music": "music",
+        "meeting": "meeting",
+        "hot": "hot"
+      },
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "rest": [
+        "rest-coffee",
+        "rest-think",
+        "rest-kiss"
+      ],
+      "shelved": [
+        "rest-lookback",
+        "rest-sidesit"
+      ],
+      "clip": {
+        "strip": "nyx-clip-hips.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "once": true,
+        "box": [
+          -5,
+          -1,
+          263,
+          441
+        ]
+      }
+    },
+    "hips-eve": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "body": "nyx-hips-eve.png",
+      "blink": "nyx-hips-eve-blink.png",
+      "hand": "nyx-hips-eve-hand.png",
+      "hand_pivot": [
+        0.1314,
+        0.5214
+      ],
+      "faces": {
+        "stars": "nyx-hips-eve-face-stars.png",
+        "determined": "nyx-hips-eve-face-determined.png",
+        "dizzy": "nyx-hips-eve-face-dizzy.png",
+        "pout": "nyx-hips-eve-face-pout.png"
+      },
+      "poses": {
+        "peek": "peek-eve",
+        "sleep": "sleep-eve",
+        "duck": "duck-eve",
+        "worry": "worry-eve",
+        "cheer": "cheer-eve",
+        "music": "music-eve",
+        "meeting": "meeting-eve",
+        "hot": "hot-eve"
+      },
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "rest": [
+        "rest-kiss-eve"
+      ],
+      "shelved": [
+        "rest-lookback-eve",
+        "rest-lean-eve"
+      ],
+      "clip": {
+        "strip": "nyx-clip-hips-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "once": true,
+        "box": [
+          -3,
+          -1,
+          260,
+          441
+        ]
+      }
+    },
+    "hips-2b": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "body": "nyx-hips-2b.png",
+      "blink": "nyx-hips-2b-blink.png",
+      "faces": {
+        "stars": "nyx-hips-2b-face-stars.png",
+        "determined": "nyx-hips-2b-face-determined.png",
+        "dizzy": "nyx-hips-2b-face-dizzy.png",
+        "pout": "nyx-hips-2b-face-pout.png"
+      },
+      "poses": {
+        "peek": "peek-2b",
+        "sleep": "sleep-2b",
+        "duck": "duck-2b",
+        "worry": "worry-2b",
+        "cheer": "cheer-2b",
+        "music": "music-2b",
+        "meeting": "meeting-2b",
+        "hot": "hot-2b"
+      },
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "rest": [
+        "rest-curtsy-2b",
+        "rest-tea-2b",
+        "rest-kiss-2b"
+      ],
+      "shelved": [
+        "rest-lookback-2b",
+        "rest-sidesit-2b"
+      ],
+      "clip": {
+        "strip": "nyx-clip-hips-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "once": true,
+        "box": [
+          -3,
+          -1,
+          260,
+          441
+        ]
+      }
+    },
+    "hips-zelda": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "body": "nyx-hips-zelda.png",
+      "blink": "nyx-hips-zelda-blink.png",
+      "hand": "nyx-hips-zelda-hand.png",
+      "hand_pivot": [
+        0.1281,
+        0.5121
+      ],
+      "faces": {
+        "stars": "nyx-hips-zelda-face-stars.png",
+        "determined": "nyx-hips-zelda-face-determined.png",
+        "dizzy": "nyx-hips-zelda-face-dizzy.png",
+        "pout": "nyx-hips-zelda-face-pout.png"
+      },
+      "poses": {
+        "peek": "peek-zelda",
+        "sleep": "sleep-zelda",
+        "duck": "duck-zelda",
+        "worry": "worry-zelda",
+        "cheer": "cheer-zelda"
+      },
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "clip": {
+        "strip": "nyx-clip-hips-zelda.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "once": true,
+        "box": [
+          -4,
+          -1,
+          260,
+          441
+        ]
+      }
+    },
+    "full-chibi": {
+      "layout": "beside",
+      "size": [
+        197,
+        560
+      ],
+      "body": "nyx-full-chibi.png",
+      "blink": "nyx-full-chibi-blink.png",
+      "faces": {
+        "stars": "nyx-full-chibi-face-stars.png",
+        "determined": "nyx-full-chibi-face-determined.png",
+        "dizzy": "nyx-full-chibi-face-dizzy.png",
+        "pout": "nyx-full-chibi-face-pout.png"
+      },
+      "head": [
+        0.22,
+        0.01,
+        0.78,
+        0.21
+      ],
+      "poses": {
+        "cheer": "cheer-full-chibi",
+        "worry": "worry-full-chibi"
+      }
+    },
+    "full-eve": {
+      "layout": "beside",
+      "size": [
+        197,
+        560
+      ],
+      "body": "nyx-full-eve.png",
+      "blink": "nyx-full-eve-blink.png",
+      "faces": {
+        "stars": "nyx-full-eve-face-stars.png",
+        "determined": "nyx-full-eve-face-determined.png",
+        "dizzy": "nyx-full-eve-face-dizzy.png",
+        "pout": "nyx-full-eve-face-pout.png"
+      },
+      "head": [
+        0.22,
+        0.01,
+        0.78,
+        0.21
+      ],
+      "poses": {
+        "cheer": "cheer-full-eve",
+        "worry": "worry-full-eve"
+      }
+    },
+    "full-2b": {
+      "layout": "beside",
+      "size": [
+        196,
+        560
+      ],
+      "body": "nyx-full-2b.png",
+      "blink": "nyx-full-2b-blink.png",
+      "faces": {
+        "stars": "nyx-full-2b-face-stars.png",
+        "determined": "nyx-full-2b-face-determined.png",
+        "dizzy": "nyx-full-2b-face-dizzy.png",
+        "pout": "nyx-full-2b-face-pout.png"
+      },
+      "head": [
+        0.22,
+        0.01,
+        0.78,
+        0.21
+      ],
+      "poses": {
+        "cheer": "cheer-full-2b",
+        "worry": "worry-full-2b"
+      }
+    },
+    "full-zelda": {
+      "layout": "beside",
+      "size": [
+        197,
+        560
+      ],
+      "body": "nyx-full-zelda.png",
+      "blink": "nyx-full-zelda-blink.png",
+      "faces": {
+        "stars": "nyx-full-zelda-face-stars.png",
+        "determined": "nyx-full-zelda-face-determined.png",
+        "dizzy": "nyx-full-zelda-face-dizzy.png",
+        "pout": "nyx-full-zelda-face-pout.png"
+      },
+      "head": [
+        0.22,
+        0.01,
+        0.78,
+        0.21
+      ],
+      "poses": {
+        "cheer": "cheer-full-zelda",
+        "worry": "worry-full-zelda"
+      }
+    },
+    "lying-chibi": {
+      "layout": "top",
+      "size": [
+        554,
+        235
+      ],
+      "body": "nyx-lying-chibi.png",
+      "feet": "nyx-lying-chibi-feet.png",
+      "feet_pivot": [
+        0.7796,
+        0.7664
+      ],
+      "blink": "nyx-lying-chibi-blink.png",
+      "faces": {
+        "stars": "nyx-lying-chibi-face-stars.png",
+        "determined": "nyx-lying-chibi-face-determined.png",
+        "dizzy": "nyx-lying-chibi-face-dizzy.png",
+        "pout": "nyx-lying-chibi-face-pout.png"
+      },
+      "head": [
+        0.17,
+        0.03,
+        0.38,
+        0.55
+      ]
+    }
+  },
+  "poses": {
+    "peek": {
+      "layout": "perch",
+      "size": [
+        262,
+        202
+      ],
+      "body": "nyx-pose-peek.png",
+      "head": [
+        0.15,
+        0.03,
+        0.85,
+        0.85
+      ]
+    },
+    "sleep": {
+      "layout": "perch",
+      "size": [
+        299,
+        201
+      ],
+      "body": "nyx-pose-sleep.png",
+      "head": [
+        0.15,
+        0.1,
+        0.7,
+        0.75
+      ],
+      "clip": {
+        "strip": "nyx-clip-sleep.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -2,
+          0,
+          301,
+          201
+        ]
+      }
+    },
+    "duck": {
+      "layout": "beside",
+      "size": [
+        220,
+        440
+      ],
+      "body": "nyx-pose-duck.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ]
+    },
+    "worry": {
+      "layout": "beside",
+      "size": [
+        330,
+        440
+      ],
+      "body": "nyx-pose-worry.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "clip": {
+        "strip": "nyx-clip-worry.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -1,
+          -1,
+          331,
+          441
+        ]
+      }
+    },
+    "cheer": {
+      "layout": "beside",
+      "size": [
+        406,
+        442
+      ],
+      "dx": -67,
+      "head": [
+        0.244,
+        0.06,
+        0.737,
+        0.4
+      ],
+      "body": "nyx-pose-cheer.png",
+      "alt": "nyx-pose-cheer-alt.png",
+      "clip": {
+        "strip": "nyx-clip-cheer.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -9,
+          -28,
+          421,
+          470
+        ]
+      }
+    },
+    "peek-2b": {
+      "layout": "perch",
+      "size": [
+        262,
+        202
+      ],
+      "body": "nyx-pose-peek-2b.png",
+      "head": [
+        0.15,
+        0.03,
+        0.85,
+        0.85
+      ]
+    },
+    "sleep-2b": {
+      "layout": "perch",
+      "size": [
+        327,
+        201
+      ],
+      "body": "nyx-pose-sleep-2b.png",
+      "head": [
+        0.15,
+        0.1,
+        0.7,
+        0.75
+      ],
+      "clip": {
+        "strip": "nyx-clip-sleep-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -1,
+          -10,
+          332,
+          211
+        ]
+      }
+    },
+    "duck-2b": {
+      "layout": "beside",
+      "size": [
+        231,
+        440
+      ],
+      "body": "nyx-pose-duck-2b.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ]
+    },
+    "worry-2b": {
+      "layout": "beside",
+      "size": [
+        301,
+        441
+      ],
+      "body": "nyx-pose-worry-2b.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "clip": {
+        "strip": "nyx-clip-worry-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          0,
+          -2,
+          301,
+          443
+        ]
+      }
+    },
+    "cheer-2b": {
+      "layout": "beside",
+      "size": [
+        403,
+        442
+      ],
+      "dx": -66,
+      "head": [
+        0.241,
+        0.06,
+        0.738,
+        0.4
+      ],
+      "body": "nyx-pose-cheer-2b.png",
+      "alt": "nyx-pose-cheer-2b-alt.png",
+      "clip": {
+        "strip": "nyx-clip-cheer-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -23,
+          -6,
+          445,
+          448
+        ]
+      }
+    },
+    "peek-eve": {
+      "layout": "perch",
+      "size": [
+        262,
+        202
+      ],
+      "body": "nyx-pose-peek-eve.png",
+      "head": [
+        0.15,
+        0.03,
+        0.85,
+        0.85
+      ]
+    },
+    "sleep-eve": {
+      "layout": "perch",
+      "size": [
+        312,
+        201
+      ],
+      "body": "nyx-pose-sleep-eve.png",
+      "head": [
+        0.15,
+        0.1,
+        0.7,
+        0.75
+      ],
+      "clip": {
+        "strip": "nyx-clip-sleep-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          0,
+          -15,
+          332,
+          216
+        ]
+      }
+    },
+    "duck-eve": {
+      "layout": "beside",
+      "size": [
+        223,
+        440
+      ],
+      "body": "nyx-pose-duck-eve.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ]
+    },
+    "worry-eve": {
+      "layout": "beside",
+      "size": [
+        300,
+        441
+      ],
+      "body": "nyx-pose-worry-eve.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "clip": {
+        "strip": "nyx-clip-worry-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -1,
+          -3,
+          301,
+          444
+        ]
+      }
+    },
+    "cheer-eve": {
+      "layout": "beside",
+      "size": [
+        405,
+        442
+      ],
+      "dx": -67,
+      "head": [
+        0.242,
+        0.06,
+        0.737,
+        0.4
+      ],
+      "body": "nyx-pose-cheer-eve.png",
+      "alt": "nyx-pose-cheer-eve-alt.png",
+      "clip": {
+        "strip": "nyx-clip-cheer-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -26,
+          -1,
+          450,
+          443
+        ]
+      }
+    },
+    "peek-zelda": {
+      "layout": "perch",
+      "size": [
+        262,
+        202
+      ],
+      "body": "nyx-pose-peek-zelda.png",
+      "head": [
+        0.15,
+        0.03,
+        0.85,
+        0.85
+      ]
+    },
+    "sleep-zelda": {
+      "layout": "perch",
+      "size": [
+        328,
+        201
+      ],
+      "body": "nyx-pose-sleep-zelda.png",
+      "head": [
+        0.15,
+        0.1,
+        0.7,
+        0.75
+      ],
+      "clip": {
+        "strip": "nyx-clip-sleep-zelda.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          0,
+          -14,
+          328,
+          215
+        ]
+      }
+    },
+    "duck-zelda": {
+      "layout": "beside",
+      "size": [
+        219,
+        440
+      ],
+      "body": "nyx-pose-duck-zelda.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ]
+    },
+    "worry-zelda": {
+      "layout": "beside",
+      "size": [
+        301,
+        440
+      ],
+      "body": "nyx-pose-worry-zelda.png",
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "clip": {
+        "strip": "nyx-clip-worry-zelda.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -1,
+          -1,
+          302,
+          441
+        ]
+      }
+    },
+    "cheer-zelda": {
+      "layout": "beside",
+      "size": [
+        404,
+        443
+      ],
+      "dx": -66,
+      "head": [
+        0.242,
+        0.06,
+        0.737,
+        0.4
+      ],
+      "body": "nyx-pose-cheer-zelda.png",
+      "alt": "nyx-pose-cheer-zelda-alt.png",
+      "clip": {
+        "strip": "nyx-clip-cheer-zelda.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -12,
+          -5,
+          428,
+          448
+        ]
+      }
+    },
+    "cheer-full-chibi": {
+      "layout": "beside",
+      "size": [
+        360,
+        570
+      ],
+      "dx": -78,
+      "head": [
+        0.337,
+        0.027,
+        0.643,
+        0.224
+      ],
+      "body": "nyx-pose-cheer-full-chibi.png",
+      "alt": "nyx-pose-cheer-full-chibi-alt.png"
+    },
+    "worry-full-chibi": {
+      "layout": "beside",
+      "size": [
+        222,
+        560
+      ],
+      "dx": -10,
+      "head": [
+        0.24,
+        0.01,
+        0.737,
+        0.21
+      ],
+      "body": "nyx-pose-worry-full-chibi.png"
+    },
+    "cheer-full-eve": {
+      "layout": "beside",
+      "size": [
+        390,
+        597
+      ],
+      "dx": -93,
+      "head": [
+        0.35,
+        0.071,
+        0.632,
+        0.259
+      ],
+      "body": "nyx-pose-cheer-full-eve.png",
+      "alt": "nyx-pose-cheer-full-eve-alt.png"
+    },
+    "worry-full-eve": {
+      "layout": "beside",
+      "size": [
+        226,
+        560
+      ],
+      "dx": -16,
+      "head": [
+        0.263,
+        0.01,
+        0.751,
+        0.21
+      ],
+      "body": "nyx-pose-worry-full-eve.png"
+    },
+    "cheer-full-2b": {
+      "layout": "beside",
+      "size": [
+        374,
+        570
+      ],
+      "dx": -86,
+      "head": [
+        0.345,
+        0.027,
+        0.639,
+        0.224
+      ],
+      "body": "nyx-pose-cheer-full-2b.png",
+      "alt": "nyx-pose-cheer-full-2b-alt.png"
+    },
+    "worry-full-2b": {
+      "layout": "beside",
+      "size": [
+        230,
+        560
+      ],
+      "dx": -15,
+      "head": [
+        0.253,
+        0.01,
+        0.73,
+        0.21
+      ],
+      "body": "nyx-pose-worry-full-2b.png"
+    },
+    "cheer-full-zelda": {
+      "layout": "beside",
+      "size": [
+        360,
+        572
+      ],
+      "dx": -78,
+      "head": [
+        0.337,
+        0.031,
+        0.643,
+        0.227
+      ],
+      "body": "nyx-pose-cheer-full-zelda.png",
+      "alt": "nyx-pose-cheer-full-zelda-alt.png"
+    },
+    "worry-full-zelda": {
+      "layout": "beside",
+      "size": [
+        215,
+        560
+      ],
+      "dx": -7,
+      "head": [
+        0.234,
+        0.01,
+        0.747,
+        0.21
+      ],
+      "body": "nyx-pose-worry-full-zelda.png"
+    },
+    "rest-coffee": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "body": "nyx-pose-rest-coffee.png",
+      "clip": {
+        "strip": "nyx-clip-rest-coffee.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -1,
+          258,
+          441
+        ]
+      }
+    },
+    "rest-think": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "body": "nyx-pose-rest-think.png",
+      "clip": {
+        "strip": "nyx-clip-rest-think.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -1,
+          257,
+          441
+        ]
+      }
+    },
+    "rest-kiss": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "body": "nyx-pose-rest-kiss.png",
+      "float": "heart",
+      "clip": {
+        "strip": "nyx-clip-rest-kiss.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -4,
+          255,
+          444
+        ]
+      }
+    },
+    "rest-lookback": {
+      "layout": "beside",
+      "size": [
+        197,
+        554
+      ],
+      "dx": 28,
+      "head": [
+        0.15,
+        0.0,
+        0.62,
+        0.24
+      ],
+      "body": "nyx-pose-rest-lookback.png",
+      "clip": {
+        "strip": "nyx-clip-rest-lookback.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -2,
+          -2,
+          203,
+          556
+        ]
+      }
+    },
+    "rest-sidesit": {
+      "layout": "perch",
+      "size": [
+        300,
+        322
+      ],
+      "head": [
+        0.33,
+        0.0,
+        0.66,
+        0.3
+      ],
+      "body": "nyx-pose-rest-sidesit.png",
+      "clip": {
+        "strip": "nyx-clip-rest-sidesit.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -1,
+          -3,
+          302,
+          325
+        ]
+      }
+    },
+    "music": {
+      "layout": "beside",
+      "size": [
+        254,
+        441
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.022,
+        0.85,
+        0.301
+      ],
+      "body": "nyx-pose-music.png",
+      "float": "notes",
+      "clip": {
+        "strip": "nyx-clip-music.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          0,
+          -1,
+          261,
+          442
+        ]
+      }
+    },
+    "meeting": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "body": "nyx-pose-meeting.png",
+      "clip": {
+        "strip": "nyx-clip-meeting.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -2,
+          256,
+          442
+        ]
+      }
+    },
+    "rest-curtsy-2b": {
+      "layout": "beside",
+      "size": [
+        271,
+        440
+      ],
+      "dx": -3,
+      "head": [
+        0.151,
+        0.02,
+        0.806,
+        0.3
+      ],
+      "body": "nyx-pose-rest-curtsy-2b.png",
+      "clip": {
+        "strip": "nyx-clip-rest-curtsy-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -3,
+          -1,
+          285,
+          441
+        ]
+      }
+    },
+    "rest-tea-2b": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.849,
+        0.3
+      ],
+      "body": "nyx-pose-rest-tea-2b.png",
+      "clip": {
+        "strip": "nyx-clip-rest-tea-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -3,
+          257,
+          443
+        ]
+      }
+    },
+    "rest-kiss-2b": {
+      "layout": "beside",
+      "size": [
+        258,
+        440
+      ],
+      "dx": -5,
+      "head": [
+        0.166,
+        0.02,
+        0.853,
+        0.3
+      ],
+      "body": "nyx-pose-rest-kiss-2b.png",
+      "float": "heart",
+      "clip": {
+        "strip": "nyx-clip-rest-kiss-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -1,
+          -1,
+          265,
+          441
+        ]
+      }
+    },
+    "rest-lookback-2b": {
+      "layout": "beside",
+      "size": [
+        197,
+        554
+      ],
+      "dx": 28,
+      "head": [
+        0.15,
+        0.0,
+        0.65,
+        0.24
+      ],
+      "body": "nyx-pose-rest-lookback-2b.png",
+      "clip": {
+        "strip": "nyx-clip-rest-lookback-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -2,
+          199,
+          556
+        ]
+      }
+    },
+    "rest-sidesit-2b": {
+      "layout": "perch",
+      "size": [
+        301,
+        322
+      ],
+      "head": [
+        0.3,
+        0.0,
+        0.62,
+        0.3
+      ],
+      "body": "nyx-pose-rest-sidesit-2b.png",
+      "clip": {
+        "strip": "nyx-clip-rest-sidesit-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -1,
+          -3,
+          303,
+          325
+        ]
+      }
+    },
+    "music-2b": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.021,
+        0.85,
+        0.301
+      ],
+      "body": "nyx-pose-music-2b.png",
+      "float": "notes",
+      "clip": {
+        "strip": "nyx-clip-music-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -1,
+          -1,
+          262,
+          441
+        ]
+      }
+    },
+    "meeting-2b": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.85,
+        0.3
+      ],
+      "body": "nyx-pose-meeting-2b.png",
+      "clip": {
+        "strip": "nyx-clip-meeting-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -1,
+          257,
+          441
+        ]
+      }
+    },
+    "rest-kiss-eve": {
+      "layout": "beside",
+      "size": [
+        259,
+        440
+      ],
+      "dx": -5,
+      "head": [
+        0.166,
+        0.02,
+        0.852,
+        0.3
+      ],
+      "body": "nyx-pose-rest-kiss-eve.png",
+      "float": "heart",
+      "clip": {
+        "strip": "nyx-clip-rest-kiss-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -2,
+          -2,
+          266,
+          442
+        ]
+      }
+    },
+    "rest-lookback-eve": {
+      "layout": "beside",
+      "size": [
+        198,
+        554
+      ],
+      "dx": 28,
+      "head": [
+        0.22,
+        0.0,
+        0.85,
+        0.19
+      ],
+      "body": "nyx-pose-rest-lookback-eve.png",
+      "clip": {
+        "strip": "nyx-clip-rest-lookback-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -1,
+          -1,
+          203,
+          555
+        ]
+      }
+    },
+    "rest-lean-eve": {
+      "layout": "beside",
+      "size": [
+        194,
+        560
+      ],
+      "dx": 30,
+      "head": [
+        0.16,
+        0.0,
+        0.8,
+        0.19
+      ],
+      "body": "nyx-pose-rest-lean-eve.png",
+      "float": "heart",
+      "clip": {
+        "strip": "nyx-clip-rest-lean-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          -1,
+          0,
+          195,
+          560
+        ]
+      }
+    },
+    "music-eve": {
+      "layout": "beside",
+      "size": [
+        254,
+        441
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.022,
+        0.849,
+        0.301
+      ],
+      "body": "nyx-pose-music-eve.png",
+      "float": "notes",
+      "clip": {
+        "strip": "nyx-clip-music-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          0,
+          -1,
+          262,
+          442
+        ]
+      }
+    },
+    "meeting-eve": {
+      "layout": "beside",
+      "size": [
+        254,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.15,
+        0.02,
+        0.849,
+        0.3
+      ],
+      "body": "nyx-pose-meeting-eve.png",
+      "clip": {
+        "strip": "nyx-clip-meeting-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 4000,
+        "box": [
+          0,
+          -1,
+          256,
+          441
+        ]
+      }
+    },
+    "beach-wave-b": {
+      "layout": "beside",
+      "size": [
+        253,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.152,
+        0.0,
+        0.908,
+        0.365
+      ],
+      "body": "nyx-pose-beach-wave-b-hips.png"
+    },
+    "beach-wave-c": {
+      "layout": "beside",
+      "size": [
+        253,
+        440
+      ],
+      "dx": 0,
+      "head": [
+        0.153,
+        0.0,
+        0.908,
+        0.365
+      ],
+      "body": "nyx-pose-beach-wave-c-hips.png"
+    },
+    "beach-cheer-a": {
+      "layout": "beside",
+      "size": [
+        457,
+        450
+      ],
+      "dx": -97,
+      "head": [
+        0.31,
+        0.02,
+        0.669,
+        0.378
+      ],
+      "body": "nyx-pose-beach-cheer-a-hips.png"
+    },
+    "beach-kiss-c": {
+      "layout": "beside",
+      "size": [
+        250,
+        440
+      ],
+      "dx": 21,
+      "head": [
+        0.069,
+        0.0,
+        0.832,
+        0.365
+      ],
+      "body": "nyx-pose-beach-kiss-c-hips.png",
+      "float": "heart"
+    },
+    "beach-hat-c": {
+      "layout": "beside",
+      "size": [
+        317,
+        440
+      ],
+      "dx": -17,
+      "head": [
+        0.005,
+        0.0,
+        0.89,
+        0.406
+      ],
+      "body": "nyx-pose-beach-hat-c-hips.png"
+    },
+    "beach-ball-c": {
+      "layout": "beside",
+      "size": [
+        297,
+        440
+      ],
+      "dx": -44,
+      "head": [
+        0.278,
+        0.0,
+        0.921,
+        0.365
+      ],
+      "body": "nyx-pose-beach-ball-c-hips.png"
+    },
+    "beach-drink-b": {
+      "layout": "beside",
+      "size": [
+        217,
+        440
+      ],
+      "dx": 18,
+      "head": [
+        0.002,
+        0.0,
+        0.959,
+        0.432
+      ],
+      "body": "nyx-pose-beach-drink-b.png"
+    },
+    "beach-icecream-b": {
+      "layout": "beside",
+      "size": [
+        217,
+        440
+      ],
+      "dx": 18,
+      "head": [
+        0.003,
+        0.0,
+        0.96,
+        0.432
+      ],
+      "body": "nyx-pose-beach-icecream-b.png"
+    },
+    "beach-sunglasses-b": {
+      "layout": "beside",
+      "size": [
+        239,
+        440
+      ],
+      "dx": 7,
+      "head": [
+        0.092,
+        0.0,
+        0.962,
+        0.432
+      ],
+      "body": "nyx-pose-beach-sunglasses-b.png"
+    },
+    "hot": {
+      "layout": "beside",
+      "size": [
+        273,
+        440
+      ],
+      "dx": -21,
+      "head": [
+        0.215,
+        0.02,
+        0.862,
+        0.3
+      ],
+      "body": "nyx-pose-hot.png",
+      "hand": "nyx-pose-hot-hand.png",
+      "hand_pivot": [
+        0.0841,
+        0.5864
+      ],
+      "clip": {
+        "strip": "nyx-clip-hot.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -9,
+          -1,
+          285,
+          441
+        ]
+      }
+    },
+    "hot-2b": {
+      "layout": "beside",
+      "size": [
+        274,
+        440
+      ],
+      "dx": -21,
+      "head": [
+        0.215,
+        0.02,
+        0.861,
+        0.3
+      ],
+      "body": "nyx-pose-hot-2b.png",
+      "hand": "nyx-pose-hot-2b-hand.png",
+      "hand_pivot": [
+        0.1031,
+        0.5852
+      ],
+      "clip": {
+        "strip": "nyx-clip-hot-2b.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -12,
+          -2,
+          289,
+          442
+        ]
+      }
+    },
+    "hot-eve": {
+      "layout": "beside",
+      "size": [
+        267,
+        440
+      ],
+      "dx": -14,
+      "head": [
+        0.195,
+        0.021,
+        0.857,
+        0.301
+      ],
+      "body": "nyx-pose-hot-eve.png",
+      "hand": "nyx-pose-hot-eve-hand.png",
+      "hand_pivot": [
+        0.0802,
+        0.5649
+      ],
+      "clip": {
+        "strip": "nyx-clip-hot-eve.png",
+        "frames": 36,
+        "fps": 12,
+        "gap": 0,
+        "box": [
+          -5,
+          -1,
+          276,
+          441
+        ]
+      }
+    }
+  },
+  "beach": {
+    "looks": {
+      "beach": {
+        "layout": "beside",
+        "size": [
+          253,
+          440
+        ],
+        "body": "nyx-beach-hips.png",
+        "head": [
+          0.152,
+          0.0,
+          0.908,
+          0.365
+        ],
+        "rest": [
+          "beach-drink-b",
+          "beach-hat-c",
+          "beach-icecream-b",
+          "beach-ball-c",
+          "beach-cheer-a",
+          "beach-sunglasses-b",
+          "beach-kiss-c",
+          "beach-wave-b",
+          "beach-wave-c"
+        ]
+      },
+      "beach-lounger": {
+        "layout": "top",
+        "size": [
+          554,
+          257
+        ],
+        "body": "nyx-beach-lounger.png",
+        "head": [
+          0.045,
+          0.107,
+          0.261,
+          0.604
+        ]
+      },
+      "beach-towel": {
+        "layout": "top",
+        "size": [
+          554,
+          235
+        ],
+        "body": "nyx-beach-towel.png",
+        "head": [
+          0.161,
+          0.021,
+          0.344,
+          0.474
+        ]
+      }
+    },
+    "steps": [
+      "beach",
+      "beach-drink-b",
+      "beach-hat-c",
+      "beach-lounger",
+      "beach-icecream-b",
+      "beach-ball-c",
+      "beach-cheer-a",
+      "beach-towel",
+      "beach-sunglasses-b",
+      "beach-kiss-c",
+      "beach-wave-b",
+      "beach-wave-c"
+    ]
+  }
+}

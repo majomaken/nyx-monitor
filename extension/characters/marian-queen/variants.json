@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    429,
+    440
+   ],
+   "body": "marian-queen-hips.png",
+   "head": [
+    0.319,
+    0,
+    0.701,
+    0.342
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    460,
+    472
+   ],
+   "body": "marian-queen-full.png",
+   "head": [
+    0.41,
+    0.0,
+    0.6,
+    0.17
+   ]
+  }
+ },
+ "poses": {}
+}

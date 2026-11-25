@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    424,
+    440
+   ],
+   "body": "flora-hips.png",
+   "head": [
+    0.312,
+    0.241,
+    0.638,
+    0.542
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    313,
+    560
+   ],
+   "body": "flora-full.png",
+   "head": [
+    0.3,
+    0.12,
+    0.58,
+    0.27
+   ]
+  }
+ },
+ "poses": {}
+}

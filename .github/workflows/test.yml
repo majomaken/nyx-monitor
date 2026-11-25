@@ -1,0 +1,26 @@
+# Every pull request and every push to main. Read-only token, no secrets: a pull request from a fork runs this as is.
+name: test
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Tools for the shell tests
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gjs libglib2.0-bin jq
+      - name: Unit tests (Node in Docker)
+        run: bash tests/run.sh
+      - name: install.sh
+        run: bash tests/install.test.sh
+      - name: The updater, get.sh and release.sh
+        run: bash tests/update.test.sh
+      - name: The release site's nginx
+        run: bash tests/site.test.sh

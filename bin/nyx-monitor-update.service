@@ -1,0 +1,6 @@
+[Unit]
+Description=Check whether a new Nyx Monitor version is out (it only notifies, never installs)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/nyx-monitor-update check --notify

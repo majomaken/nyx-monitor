@@ -1,0 +1,277 @@
+#!/usr/bin/env bash
+# nyx-monitor-update: installs and updates Nyx Monitor from its release channel.
+# Host bash + curl + tar + sha256sum + gjs + ssh-keygen (every GNOME desktop has them). Releases live unpacked and untouched in
+# ~/.local/share/nyx-monitor/releases/<version>/; the GNOME extension folder and ~/.local/bin/nyx-monitor-update are
+# links into the current one, and the previous one stays for a rollback. Settings live in dconf and are never touched.
+#   nyx-monitor-update check [--json] [--notify]   is there a newer version? (--notify: a desktop notification, once)
+#   nyx-monitor-update install                      download, verify and switch to the latest version
+#   nyx-monitor-update rollback                     back to the previous version
+#   nyx-monitor-update status                       what is installed
+# NYX_UPDATE_URL points at another channel (tests use file:// URLs); NYX_ALLOWED_SIGNERS, a file in ssh-keygen's
+# allowed_signers format, trusts another release key (tests, or a fork's own channel).
+set -euo pipefail
+
+uuid=nyx-monitor@majomaken
+url=${NYX_UPDATE_URL:-https://nyx.majomaken.dev}
+url=${url%/}
+data=${XDG_DATA_HOME:-$HOME/.local/share}
+root=${NYX_ROOT:-$data/nyx-monitor}
+releases=$root/releases
+ext=${NYX_EXTENSIONS_DIR:-$data/gnome-shell/extensions}/$uuid
+bin_link=$HOME/.local/bin/nyx-monitor-update
+state=${XDG_STATE_HOME:-$HOME/.local/state}/nyx-monitor
+units=${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user
+# The official channel's release key: latest.json counts only with a signature from it (ssh-keygen -Y). Its fingerprint
+# is in README.md and SECURITY.md. A fork that runs its own channel puts its own public key here.
+signer='nyx-monitor-release namespaces="nyx-monitor" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA1TgBokDv/WO7zzyD+NyQZTE5LrqarAGUMOWDHQC/wr'
+
+say() { printf '%s\n' "$*"; }
+die() { printf 'nyx-monitor-update: %s\n' "$*" >&2; exit "${2:-1}"; }
+
+for tool in curl tar sha256sum gjs ssh-keygen; do
+    command -v "$tool" >/dev/null || die "falta $tool; instálalo e intenta de nuevo."
+done
+
+# Only https (file:// for tests), and curl may not follow a redirect to anything else: over plain http a download
+# could be swapped on the way.
+case $url in
+    https://*) proto=(--proto "=https" --proto-redir "=https") ;;
+    file://*) proto=(--proto "=file" --proto-redir "=file") ;;
+    *) die "el canal de actualizaciones debe ser https:// (es $url)." ;;
+esac
+
+# json <file> <key>: one top-level value of a JSON file, as text ('' when missing).
+json() {
+    gjs -c 'const [, b] = imports.gi.GLib.file_get_contents(ARGV[0]);
+        const v = JSON.parse(new TextDecoder().decode(b))[ARGV[1]];
+        print(v === undefined || v === null ? "" : typeof v === "object" ? JSON.stringify(v) : String(v));' "$1" "$2"
+}
+
+# newer <a> <b>: true when version a is newer than b, comparing each dot-separated part as a number (1.10 > 1.9).
+newer() {
+    local i
+    local -a a b
+    IFS=. read -ra a <<<"$1"
+    IFS=. read -ra b <<<"$2"
+    for ((i = 0; i < ${#a[@]} || i < ${#b[@]}; i++)); do
+        local x=$((10#${a[i]:-0})) y=$((10#${b[i]:-0}))
+        ((x > y)) && return 0
+        ((x < y)) && return 1
+    done
+    return 1
+}
+
+# The folder the extension link points at, or '' when there is no link.
+current_dir() { [ -L "$ext" ] && readlink "$ext" || true; }
+
+# A development install links the extension into a git checkout (install.sh), not into a release.
+is_dev() { local d; d=$(current_dir); [ -n "$d" ] && [[ $d != "$releases"/* ]]; }
+
+installed_version() {
+    local dir
+    dir=$(current_dir)
+    [ -z "$dir" ] && [ -d "$ext" ] && dir=$ext
+    if [ -n "$dir" ] && [ -f "$dir/metadata.json" ]; then json "$dir/metadata.json" version-name; fi
+}
+
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+
+# Downloads latest.json and its signature and trusts it only when the release key signed it, before reading any field.
+fetch_latest() {
+    curl "${proto[@]}" -fsSL --max-time 30 "$url/latest.json" -o "$tmp/latest.json" ||
+        die "no pude leer $url/latest.json; revisa la conexión."
+    curl "${proto[@]}" -fsSL --max-time 30 "$url/latest.json.sig" -o "$tmp/latest.json.sig" ||
+        die "el canal no trae la firma de latest.json; por seguridad no sigo."
+    if [ -n "${NYX_ALLOWED_SIGNERS:-}" ]; then cp "$NYX_ALLOWED_SIGNERS" "$tmp/allowed_signers"
+    else printf '%s\n' "$signer" > "$tmp/allowed_signers"; fi
+    ssh-keygen -Y verify -f "$tmp/allowed_signers" -I nyx-monitor-release -n nyx-monitor -s "$tmp/latest.json.sig" \
+        < "$tmp/latest.json" >/dev/null 2>&1 ||
+        die "la firma de latest.json no es válida; por seguridad no sigo. Avísale al autor de Nyx Monitor."
+    latest=$(json "$tmp/latest.json" version)
+    [[ $latest =~ ^[0-9]+(\.[0-9]+)*$ ]] || die "latest.json no trae una versión válida."
+}
+
+notify() { # notify <title> <body>: through org.freedesktop.Notifications, so libnotify is not needed
+    command -v gdbus >/dev/null || return 0
+    gdbus call --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications \
+        --method org.freedesktop.Notifications.Notify "Nyx Monitor" 0 software-update-available-symbolic \
+        "$1" "$2" "[]" "{}" 15000 >/dev/null 2>&1 || true
+}
+
+cmd_check() {
+    local as_json=0 notify_once=0 arg
+    for arg in "$@"; do
+        case $arg in --json) as_json=1 ;; --notify) notify_once=1 ;; *) die "opción desconocida: $arg" 2 ;; esac
+    done
+    local have dev=false update=false
+    have=$(installed_version)
+    is_dev && dev=true
+    fetch_latest
+    if [ "$dev" = false ] && { [ -z "$have" ] || newer "$latest" "$have"; }; then update=true; fi
+    if [ "$as_json" = 1 ]; then
+        gjs -c 'const [, b] = imports.gi.GLib.file_get_contents(ARGV[0]);
+            const l = JSON.parse(new TextDecoder().decode(b));
+            print(JSON.stringify({installed: ARGV[1], latest: l.version, update: ARGV[2] === "true",
+                dev: ARGV[3] === "true", notes: l.notes ?? "", bytes: l.bytes ?? 0}));' \
+            "$tmp/latest.json" "$have" "$update" "$dev"
+    elif [ "$dev" = true ]; then
+        say "Instalación de desarrollo ($(current_dir)): se actualiza con git. La versión publicada es la $latest."
+    elif [ "$update" = true ]; then
+        say "Hay una versión nueva: la $latest (tienes la ${have:-ninguna}). Actualiza con: nyx-monitor-update install"
+    else
+        say "Nyx Monitor $have está al día."
+    fi
+    if [ "$notify_once" = 1 ] && [ "$update" = true ]; then
+        mkdir -p "$state"
+        if [ "$(cat "$state/notified" 2>/dev/null)" != "$latest" ]; then
+            notify "Hay una versión nueva de Nyx Monitor" \
+                "La $latest está lista. Abre el engranaje del widget, página Actualizaciones, o corre nyx-monitor-update install."
+            echo "$latest" > "$state/notified"
+        fi
+    fi
+}
+
+# link <target> <link>: replaces the link in one rename, so it never points nowhere.
+link() { mkdir -p "$(dirname "$2")"; ln -sfn "$1" "$2.new" && mv -T "$2.new" "$2"; }
+
+enable_extension() {
+    local enabled
+    enabled=$(gsettings get org.gnome.shell enabled-extensions 2>/dev/null || true)
+    case "$enabled" in
+        "" | "@as []" | "[]") gsettings set org.gnome.shell enabled-extensions "['$uuid']" ;;
+        *"'$uuid'"*) ;;
+        *) gsettings set org.gnome.shell enabled-extensions "${enabled%]}, '$uuid']" ;;
+    esac
+    gnome-extensions enable "$uuid" >/dev/null 2>&1 || true
+}
+
+# The card's icons are MesloLGS NF glyphs: without the font they show as boxes.
+install_fonts() {
+    local from=$1/fonts fonts=$data/fonts
+    command -v fc-list >/dev/null && fc-list | grep -q "MesloLGS NF" && return 0
+    compgen -G "$from/*.ttf" >/dev/null || return 0
+    mkdir -p "$fonts"
+    cp "$from"/*.ttf "$fonts/"
+    fc-cache -f "$fonts" >/dev/null 2>&1 || true
+}
+
+install_timer() {
+    local from=$1/bin
+    mkdir -p "$units"
+    cp "$from/nyx-monitor-update.service" "$from/nyx-monitor-update.timer" "$units/"
+    if command -v systemctl >/dev/null; then
+        systemctl --user daemon-reload >/dev/null 2>&1 || true
+        systemctl --user enable --now nyx-monitor-update.timer >/dev/null 2>&1 ||
+            say "Aviso: no pude activar la revisión diaria (systemctl --user); las actualizaciones siguen a mano."
+    fi
+}
+
+# switch_to <version>: points the extension and the updater at that release and records the one it replaces.
+switch_to() {
+    local v=$1 was
+    was=$(current_dir)
+    link "$releases/$v/extension" "$ext"
+    if [ -e "$bin_link" ] && [ ! -L "$bin_link" ]; then # a file of the user's own: kept aside, never overwritten
+        local aside
+        aside=$bin_link.bak-$(date +%Y%m%d-%H%M%S)
+        mv "$bin_link" "$aside"
+        say "Tu archivo $bin_link quedó guardado en $aside."
+    fi
+    link "$releases/$v/bin/nyx-monitor-update" "$bin_link"
+    if [[ $was == "$releases"/*/extension ]]; then
+        was=${was#"$releases"/}
+        was=${was%/extension}
+        [ "$was" != "$v" ] && echo "$was" > "$root/previous"
+    fi
+}
+
+# Removes old releases: folders named by a version, except the current one, the previous one and the three newest.
+# The three newest matter because a running shell reads the release it loaded until the next login, even after two
+# updates in one session. Anything else under releases/ (legacy-* folders, a link, a folder of the user's own) stays.
+prune() {
+    local keep_now=$1 keep_prev newest dir name
+    keep_prev=$(cat "$root/previous" 2>/dev/null || true)
+    newest=$(find "$releases" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]+(\.[0-9]+)*$' |
+        sort -V -r | head -3)
+    for dir in "$releases"/*; do
+        name=${dir##*/}
+        [ -d "$dir" ] && [ ! -L "$dir" ] && [[ $name =~ ^[0-9]+(\.[0-9]+)*$ ]] || continue
+        case $name in "$keep_now" | "$keep_prev") continue ;; esac
+        grep -qxF -- "$name" <<<"$newest" && continue
+        rm -rf -- "$dir"
+    done
+}
+
+cmd_install() {
+    is_dev && die "Instalación de desarrollo ($(current_dir)): actualízala con git. Para pasarla al canal de versiones, primero: bash install.sh --remove" 3
+    fetch_latest
+    local have file sha
+    have=$(installed_version)
+    file=$(json "$tmp/latest.json" file)
+    sha=$(json "$tmp/latest.json" sha256)
+    if [ -L "$ext" ] && [ -n "$have" ] && ! newer "$latest" "$have"; then
+        say "Nyx Monitor $have está al día."
+        return 0
+    fi
+    [[ $file =~ ^[A-Za-z0-9._/-]+$ && $file != *..* ]] || die "latest.json trae una ruta de archivo inválida."
+    say "Descargando Nyx Monitor $latest..."
+    curl "${proto[@]}" -fSL --progress-bar --max-time 900 "$url/$file" -o "$tmp/release.tar.gz" || die "falló la descarga de $url/$file."
+    [ "$(sha256sum "$tmp/release.tar.gz" | cut -d' ' -f1)" = "$sha" ] ||
+        die "la descarga no coincide con su sha256; no instalé nada. Intenta de nuevo más tarde."
+    mkdir -p "$releases"
+    if [ ! -d "$releases/$latest" ]; then
+        local stage=$releases/.$latest.tmp
+        rm -rf "$stage"
+        mkdir -p "$stage"
+        tar -xzf "$tmp/release.tar.gz" -C "$stage" --no-same-owner
+        [ "$(json "$stage/extension/metadata.json" version-name)" = "$latest" ] ||
+            { rm -rf "$stage"; die "el paquete no trae la versión $latest."; }
+        mv "$stage" "$releases/$latest"
+    fi
+    glib-compile-schemas "$releases/$latest/extension/schemas"
+    if [ -d "$ext" ] && [ ! -L "$ext" ]; then # a folder copied by hand: kept aside, never deleted
+        local aside
+        aside=$releases/legacy-$(date +%Y%m%d-%H%M%S)
+        mv "$ext" "$aside"
+        say "La copia anterior quedó guardada en $aside."
+    fi
+    switch_to "$latest"
+    install_fonts "$releases/$latest"
+    install_timer "$releases/$latest"
+    enable_extension
+    prune "$latest"
+    say "Listo: Nyx Monitor $latest instalado. Cierra sesión y vuelve a entrar para verla."
+}
+
+cmd_rollback() {
+    local prev now
+    prev=$(cat "$root/previous" 2>/dev/null || true)
+    [ -n "$prev" ] && [ -d "$releases/$prev/extension" ] || die "no hay una versión anterior guardada."
+    now=$(installed_version)
+    switch_to "$prev"
+    [ -n "$now" ] && echo "$now" > "$root/previous"
+    say "Volviste a Nyx Monitor $prev. Cierra sesión y vuelve a entrar para verla."
+}
+
+cmd_status() {
+    local have
+    have=$(installed_version)
+    if is_dev; then
+        say "Instalación de desarrollo: $(current_dir) (versión ${have:-desconocida})."
+    elif [ -n "$have" ]; then
+        say "Nyx Monitor $have, en $(current_dir || true)."
+        [ -f "$root/previous" ] && say "Versión anterior guardada: $(cat "$root/previous")."
+    else
+        say "Nyx Monitor no está instalado."
+    fi
+    say "Canal: $url"
+}
+
+case ${1:-} in
+    check) shift; cmd_check "$@" ;;
+    install) cmd_install ;;
+    rollback) cmd_rollback ;;
+    status) cmd_status ;;
+    *) sed -n '7,11p' "$0" | sed 's/^# \{0,3\}//'; exit 2 ;;
+esac

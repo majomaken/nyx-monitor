@@ -1,0 +1,9 @@
+# Destino de despliegue de este proyecto. Lo lee y lo actualiza hs-deploy.sh.
+# Se puede commitear: no contiene secretos.
+
+slug=nyx-monitor
+port=9200
+container_port=80
+domain=nyx.majomaken.dev
+visibility=public
+keep_vhost=0

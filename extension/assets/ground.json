@@ -1,0 +1,66 @@
+{
+ "nyx-full-chibi.png": {
+  "x0": 0.325,
+  "x1": 0.787
+ },
+ "nyx-full-eve.png": {
+  "x0": 0.32,
+  "x1": 0.782
+ },
+ "nyx-full-2b.png": {
+  "x0": 0.337,
+  "x1": 0.781
+ },
+ "nyx-full-zelda.png": {
+  "x0": 0.33,
+  "x1": 0.782
+ },
+ "nyx-pose-cheer-full-chibi.png": {
+  "x0": 0.394,
+  "x1": 0.647
+ },
+ "nyx-pose-worry-full-chibi.png": {
+  "x0": 0.333,
+  "x1": 0.739
+ },
+ "nyx-pose-cheer-full-eve.png": {
+  "x0": 0.4,
+  "x1": 0.633
+ },
+ "nyx-pose-worry-full-eve.png": {
+  "x0": 0.35,
+  "x1": 0.752
+ },
+ "nyx-pose-cheer-full-2b.png": {
+  "x0": 0.409,
+  "x1": 0.639
+ },
+ "nyx-pose-worry-full-2b.png": {
+  "x0": 0.357,
+  "x1": 0.735
+ },
+ "nyx-pose-cheer-full-zelda.png": {
+  "x0": 0.4,
+  "x1": 0.642
+ },
+ "nyx-pose-worry-full-zelda.png": {
+  "x0": 0.34,
+  "x1": 0.749
+ },
+ "nyx-pose-rest-lookback.png": {
+  "x0": 0.03,
+  "x1": 0.904
+ },
+ "nyx-pose-rest-lookback-2b.png": {
+  "x0": 0.025,
+  "x1": 0.904
+ },
+ "nyx-pose-rest-lookback-eve.png": {
+  "x0": 0.04,
+  "x1": 0.909
+ },
+ "nyx-pose-rest-lean-eve.png": {
+  "x0": 0.242,
+  "x1": 0.706
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    365,
+    440
+   ],
+   "body": "crown-hips.png",
+   "head": [
+    0.134,
+    0,
+    0.684,
+    0.407
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    460,
+    517
+   ],
+   "body": "crown-full.png",
+   "head": [
+    0.42,
+    0.0,
+    0.66,
+    0.19
+   ]
+  }
+ },
+ "poses": {}
+}

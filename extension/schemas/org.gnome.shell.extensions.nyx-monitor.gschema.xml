@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.nyx-monitor" path="/org/gnome/shell/extensions/nyx-monitor/">
+    <key name="nyx-toggle-full" type="as">
+      <default><![CDATA[['<Super><Alt>n']]]></default>
+      <summary>Shortcut that switches between idle and full colour</summary>
+    </key>
+    <key name="character" type="s">
+      <default>'nyx'</default>
+      <summary>Which character shows: a key of extension/characters.json (nyx, okane); an unknown one shows Nyx</summary>
+    </key>
+    <key name="variant" type="s">
+      <default>'hips'</default>
+      <summary>The look of the current character (Nyx: hips, hips-eve, hips-2b, hips-zelda, full-chibi, full-eve, full-2b, full-zelda, lying-chibi; Okane: hips, full); a look she does not have shows her default one</summary>
+    </key>
+    <key name="idle-opacity" type="i">
+      <range min="10" max="100"/>
+      <default>60</default>
+      <summary>Opacity of Nyx in idle mode, in percent</summary>
+    </key>
+    <key name="animation-minutes" type="u">
+      <range min="0" max="120"/>
+      <default>5</default>
+      <summary>Minutes between Nyx's moments (0 turns them off)</summary>
+    </key>
+    <key name="phrases" type="b">
+      <default>true</default>
+      <summary>Show Nyx's phrases in a speech bubble</summary>
+    </key>
+    <key name="sleep-minutes" type="u">
+      <range min="0" max="60"/>
+      <default>3</default>
+      <summary>Minutes without keyboard or mouse before Nyx falls asleep (0 keeps her awake)</summary>
+    </key>
+    <key name="rotate-minutes" type="u">
+      <range min="0" max="1440"/>
+      <default>60</default>
+      <summary>Minutes between changes of form of her look: from the hips up, full body, lying (0 turns it off). Ignored while the schedule has entries</summary>
+    </key>
+    <key name="schedule" type="as">
+      <default>['0=lying-chibi', '6=hips', '12=hips-2b', '18=hips-eve']</default>
+      <summary>Her look by time of day: entries 'H=look', each from hour H until the next entry, the last one past midnight. Choosing a variant by hand holds it until the next slot. An empty list turns it off</summary>
+    </key>
+    <key name="rest-minutes" type="u">
+      <range min="0" max="720"/>
+      <default>30</default>
+      <summary>Minutes each pose lasts within her slot of the day: the slot opens with her usual look, then her resting poses take turns, carrying on the next day where they stopped (0 keeps her usual look)</summary>
+    </key>
+    <key name="pose-auto" type="b">
+      <default>true</default>
+      <summary>Automatic: her look follows the schedule or the change of form, and her resting poses take turns by the clock (rest-minutes). Off: the chosen look (variant) and the pose in the pose key stay</summary>
+    </key>
+    <key name="pose" type="s">
+      <default>''</default>
+      <summary>The resting pose that stays while pose-auto is off (a rest key of the shown look, such as rest-sit); empty, or a pose the look has not drawn, keeps her usual look. Meetings, heat, moments and naps still take over and come back to it</summary>
+    </key>
+    <key name="figure-offset" type="u">
+      <range min="0" max="160"/>
+      <default>24</default>
+      <summary>Pixels (at 100 % size) her standing looks stand further right of the card's edge; 0 is where she stood before 2026-11-24, over the card's right edge</summary>
+    </key>
+    <key name="pc-name" type="s">
+      <default>'SUPER PC'</default>
+      <summary>The PC's name on the card, after hers (NYX · SUPER PC); at most 20 characters show; empty, her name alone</summary>
+    </key>
+    <key name="stats-style" type="s">
+      <choices>
+        <choice value='bars'/>
+        <choice value='blocks'/>
+        <choice value='rings'/>
+        <choice value='numbers'/>
+      </choices>
+      <default>'bars'</default>
+      <summary>How the card shows CPU, RAM and GPU: bars, blocks (segments), rings (gauges) or numbers (large values)</summary>
+    </key>
+    <key name="stats-colors" type="s">
+      <choices>
+        <choice value='lavender'/>
+        <choice value='neon'/>
+        <choice value='ocean'/>
+        <choice value='sunset'/>
+        <choice value='gold'/>
+      </choices>
+      <default>'lavender'</default>
+      <summary>The colours of CPU, RAM and GPU on the card (extension/skins.js); lavender is the card's colours before the palettes</summary>
+    </key>
+    <key name="meeting-ignore-apps" type="as">
+      <default>['org.gnome.VolumeControl', 'org.PulseAudio.pavucontrol', 'com.obsproject.Studio', 'OBS', 'obs']</default>
+      <summary>Apps (application id or name, any case) whose use of the microphone is not a meeting. The first two are the volume controls GNOME's own mic indicator skips; the others are OBS</summary>
+    </key>
+    <key name="beach" type="b">
+      <default>false</default>
+      <summary>Beach mode: Nyx in her swimsuits, walking a series of resting poses (two of them lying on the wide card). The parasol beside the pin turns it on and off in full colour; it lasts until turned off</summary>
+    </key>
+    <key name="beach-minutes" type="u">
+      <range min="1" max="60"/>
+      <default>2</default>
+      <summary>Minutes each pose of the beach mode lasts before the next one fades in</summary>
+    </key>
+    <key name="ups-name" type="s">
+      <default>'hikvision'</default>
+      <summary>NUT name of the UPS on localhost:3493 she watches for power cuts (empty turns it off)</summary>
+    </key>
+    <key name="demo" type="b">
+      <default>false</default>
+      <summary>Plays a tour of every look and every animation, one step every 10 s, in full colour, then turns itself off</summary>
+    </key>
+    <key name="size" type="i">
+      <range min="50" max="200"/>
+      <default>100</default>
+      <summary>Size of Nyx, in percent of the drawn image</summary>
+    </key>
+  </schema>
+</schemalist>

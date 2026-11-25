@@ -1,0 +1,144 @@
+/* Nyx's palette: night navy glass, ash gray text, soft violet accents. */
+
+.nyx-card {
+    background-color: rgba(14, 14, 24, 0.40);
+    border: 1px solid rgba(205, 200, 235, 0.16);
+    border-radius: 16px;
+    padding: 12px 16px 14px 16px;
+}
+
+.nyx-card.nyx-full {
+    background-color: rgba(14, 14, 24, 0.82);
+    border-color: rgba(190, 175, 255, 0.45);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+.nyx-inner { spacing: 8px; }
+
+.nyx-header { spacing: 6px; }
+
+.nyx-title {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 8pt;
+    font-weight: bold;
+    color: rgba(200, 196, 225, 0.75);
+}
+
+.nyx-pin {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 10pt;
+    color: rgba(200, 196, 225, 0.45);
+    padding: 2px 4px;
+    border-radius: 6px;
+}
+
+.nyx-pin:hover { color: #ffffff; background-color: rgba(190, 175, 255, 0.20); }
+.nyx-pin.nyx-pin-on { color: #c9b8ff; }
+.nyx-pin.nyx-beach-on { color: #ffcf7a; }
+
+.nyx-rows { spacing: 9px; }
+.nyx-rows-wide { spacing: 14px; }
+.nyx-rows-cols { spacing: 6px; }
+.nyx-row { spacing: 4px; }
+.nyx-col { spacing: 3px; }
+
+.nyx-icon {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 12pt;
+    margin-right: 6px;
+}
+
+/* The icons' and the meters' colours come from the palette of the stats-colors key (skins.js), set inline. */
+
+.nyx-name {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 9pt;
+    color: rgba(190, 190, 210, 0.85);
+}
+
+.nyx-value {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #eeeef6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.nyx-track {
+    height: 5px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.nyx-fill { height: 5px; border-radius: 3px; }
+
+/* The other styles of the stats-style key: blocks, a ring gauge's value, a large number. */
+.nyx-blocks { spacing: 3px; }
+
+.nyx-block {
+    height: 7px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.nyx-ring-value {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 8.5pt;
+    font-weight: bold;
+    color: #eeeef6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.nyx-big {
+    font-family: "MesloLGS NF", monospace;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #eeeef6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Speech bubble: the card's glass, a bit denser so the phrase reads over any wallpaper. The sharp
+   corner points at Nyx's head. */
+.nyx-bubble {
+    font-size: 9.5pt;
+    font-weight: bold;
+    color: #f2f0ff;
+    background-color: rgba(22, 20, 38, 0.88);
+    border: 1px solid rgba(190, 175, 255, 0.40);
+    border-radius: 14px;
+    padding: 7px 11px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nyx-bubble.nyx-bubble-right { border-radius: 14px 14px 3px 14px; }
+.nyx-bubble.nyx-bubble-left { border-radius: 14px 14px 14px 3px; }
+
+.nyx-zzz {
+    font-family: "MesloLGS NF", monospace;
+    font-weight: bold;
+    color: #c9b8ff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.nyx-zzz-0 { font-size: 14pt; }
+.nyx-zzz-1 { font-size: 18pt; }
+.nyx-zzz-2 { font-size: 24pt; }
+
+/* What floats up from her head besides the zzz: notes with the headphones, hearts with a blown kiss. */
+.nyx-float-notes { color: #b8e1ff; }
+.nyx-float-heart { color: #ff8fc4; }
+
+/* Her shadow on the floor: a soft dark disc that the code squashes into an ellipse under her feet. */
+.nyx-shadow {
+    background-gradient-direction: radial;
+    background-gradient-start: rgba(8, 6, 18, 0.62);
+    background-gradient-end: rgba(8, 6, 18, 0);
+}
+
+/* The «!» of a notification, over her head. */
+.nyx-alert {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #ffcf7a;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+}

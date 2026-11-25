@@ -1,0 +1,263 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "body": "okane-hips.png",
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "poses": {
+    "sleep": "sleep",
+    "cheer": "cheer",
+    "worry": "worry",
+    "hot": "hot",
+    "meeting": "meeting",
+    "money": "money"
+   },
+   "rest": [
+    "rest-sit",
+    "rest-stretch",
+    "rest-lookback"
+   ],
+   "clip": {
+    "strip": "okane-clip-hips.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 0,
+    "once": true,
+    "box": [
+     -6,
+     -4,
+     411,
+     444
+    ]
+   }
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    373,
+    560
+   ],
+   "body": "okane-full.png",
+   "head": [
+    0.38,
+    0.0,
+    0.62,
+    0.15
+   ],
+   "poses": {
+    "sleep": "sleep"
+   }
+  }
+ },
+ "poses": {
+  "sleep": {
+   "layout": "beside",
+   "size": [
+    460,
+    440
+   ],
+   "dx": -40,
+   "head": [
+    0.44,
+    0.0,
+    0.8,
+    0.38
+   ],
+   "body": "okane-pose-sleep.png"
+  },
+  "cheer": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "dx": 0,
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "body": "okane-hips.png",
+   "clip": {
+    "strip": "okane-clip-cheer.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 0,
+    "box": [
+     -7,
+     -6,
+     414,
+     446
+    ]
+   }
+  },
+  "worry": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "dx": 0,
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "body": "okane-hips.png",
+   "clip": {
+    "strip": "okane-clip-worry.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 0,
+    "box": [
+     -2,
+     -7,
+     408,
+     447
+    ]
+   }
+  },
+  "hot": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "dx": 0,
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "body": "okane-hips.png",
+   "clip": {
+    "strip": "okane-clip-hot.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 0,
+    "box": [
+     -1,
+     -5,
+     406,
+     445
+    ]
+   }
+  },
+  "money": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "dx": 0,
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "body": "okane-hips.png",
+   "clip": {
+    "strip": "okane-clip-money.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 0,
+    "box": [
+     -3,
+     -1,
+     407,
+     441
+    ]
+   }
+  },
+  "meeting": {
+   "layout": "beside",
+   "size": [
+    403,
+    440
+   ],
+   "dx": 0,
+   "head": [
+    0.28,
+    0.0,
+    0.64,
+    0.26
+   ],
+   "body": "okane-hips.png",
+   "clip": {
+    "strip": "okane-clip-meeting.png",
+    "frames": 36,
+    "fps": 12,
+    "gap": 4000,
+    "box": [
+     -1,
+     -1,
+     407,
+     441
+    ]
+   }
+  },
+  "rest-sit": {
+   "layout": "beside",
+   "size": [
+    454,
+    440
+   ],
+   "dx": -33,
+   "head": [
+    0.3,
+    0.0,
+    0.66,
+    0.38
+   ],
+   "body": "okane-pose-rest-sit.png"
+  },
+  "rest-stretch": {
+   "layout": "beside",
+   "size": [
+    412,
+    440
+   ],
+   "dx": -25,
+   "head": [
+    0.32,
+    0.0,
+    0.7,
+    0.36
+   ],
+   "body": "okane-pose-rest-stretch.png"
+  },
+  "rest-lookback": {
+   "layout": "beside",
+   "size": [
+    390,
+    440
+   ],
+   "dx": -25,
+   "head": [
+    0.3,
+    0.0,
+    0.78,
+    0.34
+   ],
+   "body": "okane-pose-rest-lookback.png"
+  }
+ }
+}

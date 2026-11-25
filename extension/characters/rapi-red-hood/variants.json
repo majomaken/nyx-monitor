@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    419,
+    440
+   ],
+   "body": "rapi-red-hood-hips.png",
+   "head": [
+    0.32,
+    0,
+    0.622,
+    0.309
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    320,
+    560
+   ],
+   "body": "rapi-red-hood-full.png",
+   "head": [
+    0.36,
+    0.0,
+    0.62,
+    0.16
+   ]
+  }
+ },
+ "poses": {}
+}

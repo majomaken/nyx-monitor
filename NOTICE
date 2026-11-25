@@ -1,0 +1,20 @@
+Nyx Monitor
+Copyright (C) 2026 majomaken and the Nyx Monitor contributors
+
+The code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version
+(LICENSE). It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+The art and the fonts are not covered by the GPL. Each keeps its own terms:
+
+- Nyx (extension/assets/): original character art made for Nyx Monitor with AI image and video tools (Nano Banana
+  Pro, Seedream 4.5, Wan 2.2) and edited by hand. It may be redistributed only as part of Nyx Monitor and its forks;
+  ask before using it elsewhere.
+- Okane (extension/characters/okane/): character art made for Nyx Monitor. Same terms as Nyx.
+- NIKKE (extension/characters/anis-star, crown, flora, marian-queen, rapi-red-hood, scarlet-goddeath): official art
+  of GODDESS OF VICTORY: NIKKE, (C) SHIFT UP Corp. Included as non-commercial fan content. Nyx Monitor is not
+  affiliated with or endorsed by SHIFT UP or Level Infinite. A rights holder who wants it removed can open an issue
+  or write through SECURITY.md, and it will be taken out.
+- MesloLGS NF, installed by the updater from the release tarball (not in this repository): Meslo LG by André Berg,
+  patched with Nerd Fonts glyphs, Apache License 2.0 (release/fonts/LICENSE.txt).

@@ -1,0 +1,38 @@
+{
+ "default": "hips",
+ "forms": [
+  "hips",
+  "full"
+ ],
+ "variants": {
+  "hips": {
+   "layout": "beside",
+   "size": [
+    322,
+    440
+   ],
+   "body": "anis-star-hips.png",
+   "head": [
+    0.233,
+    0.08,
+    0.697,
+    0.382
+   ]
+  },
+  "full": {
+   "layout": "beside",
+   "size": [
+    206,
+    560
+   ],
+   "body": "anis-star-full.png",
+   "head": [
+    0.24,
+    0.04,
+    0.7,
+    0.19
+   ]
+  }
+ },
+ "poses": {}
+}

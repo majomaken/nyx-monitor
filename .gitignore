@@ -1,0 +1,6 @@
+# Compiled by install.sh from the .gschema.xml
+extension/schemas/gschemas.compiled
+# Built by release.sh
+release/site/
+# Screenshots and scratch output of tests/headless.sh and tests/devkit.sh
+local/
